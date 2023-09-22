@@ -8,13 +8,11 @@
 #8. Conocer el número de goles en contra de los equipos en los mundiales'
 #9. Conocer la diferencia de goles en todas sus presentaciones'
 #10. Conocer el promedio de goles de un equipo en mundiales'
-    #['home_team', 'away_team', 'home_score', 0-2
-    #'home_penalty', 'away_score', 'away_penalty',3-5
-    #'home_manager', 'home_captain', 'away_manager', 6-8
-    #'away_captain', 'Attendance', 'Venue', 'Round', 9-12
-    # 'Date', 'Referee', 'Host', 'Year'] 13-16
-
-from Formato import lectura
+#['home_team', 'away_team', 'home_score', 0-2
+#'home_penalty', 'away_score', 'away_penalty',3-5
+#'home_manager', 'home_captain', 'away_manager', 6-8
+#'away_captain', 'Attendance', 'Venue', 'Round', 9-12
+# 'Date', 'Referee', 'Host', 'Year'] 13-16
 
 def subcampeon_mundial(listado):
     subcampeones={}
@@ -67,21 +65,3 @@ def campeon_mundial(listado):
         print(f'fue campeon en los años {year}')
     else:
         print(f'{pais} no ha sido campeon del mundo')
-
-
-def main():
-    print('Seleccione una de las siguientes opciones:\n'\
-        '1. Cantidad de mundiales ganados por un país\n'\
-            '2. Cantidad de subcampeonatos de un país\n')
-
-    listado=lectura()    
-
-    menu={'1':campeon_mundial,
-        '2':subcampeon_mundial}
-
-    opcion=input('Ingrese una opcion: ')
-    if opcion in menu:
-        menu[opcion](listado)
-
-if __name__=="__main__":
-    main()
