@@ -29,6 +29,7 @@ def main():
     for i in estudiante:
         print(f'Nombre: {i.nombre} {i.apellido}\n\
             Edad: {i.edad}\n\n')
+        print(est.entender())
         
 if __name__=="__main__":
     main()
