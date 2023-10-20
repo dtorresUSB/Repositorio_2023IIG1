@@ -24,6 +24,9 @@ class Deportista():
 
     def getDocumento(self):
         return self.__documento
+    
+    def jugador(self):
+        return f'{self.getNombre()} es un gran maestro ajedrecista'
 
 class Futbolista(Deportista):
     def __init__(self, nombre:str,edad:int,documento:str,nombre_equipo:str,goles:int):
@@ -47,13 +50,51 @@ class Futbolista(Deportista):
     
     #-----------Métodos-----------
     def patear(self):
-        return f'el jugador {self.getNombre} acaba de anotar un gol'
+        return f'El jugador {self.getNombre()} acaba de anotar un gol'
+    
+    def jugador(self):
+        return f'{self.getNombre()} es un gran delantero'
 
+class Tenista(Deportista):
+    def __init__(self,nombre:str,edad:int,documento:str,set_ganados:int,ace:int):
+        super().__init__(nombre, edad, documento)
+        self.set_ganados=set_ganados
+        self.ace=ace
 
+    #----------Setters-----------
+    def setSetGanados(self,set_ganados:int):
+        self.set_ganados=set_ganados
+
+    def setAce(self,ace:int):
+        self.ace=ace
+    
+    #----------Getters-----------
+    def getSetGanados(self):
+        return self.set_ganados
+
+    def getAce(self):
+        return self.ace
+    
+    #----------Metodos-----------
+    def Ace(self):
+        return f'El jugador {self.getNombre()} acaba de hacer un punto'
+    
+    # def jugador(self):
+    #     return f'{self.getNombre()} es un gran tenista'
+    
 
 def main():
-    pass
+    jugador1=Futbolista('Radamel Falcao García',35,'122343521','Colombia',34)
+    jugador2=Tenista('Roger Federer',42,'887293643',6,12)
+    jugador3=Deportista('Magnus Carlsen',32,'53543653')
 
+    print(jugador2.jugador())
+    print(jugador2.Ace())
+    print('------------------')
+    print(jugador1.jugador())
+    print(jugador1.patear())
+    print('------------------')
+    print(jugador3.jugador())
 
 if __name__=="__main__":
     main()
