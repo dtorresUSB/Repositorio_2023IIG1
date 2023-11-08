@@ -18,4 +18,30 @@ while 1:
         lista.append(str(line).rstrip('\r\n'))
     print(lista)
     lista=[]
-    
+
+'''
+//--------Codigo de Arduino---------
+long randomNumber;
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  if (Serial.available() > 0) {
+    char incoming = Serial.read();
+    if (incoming == 'y') {
+      digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+      randomNumber=random(0,100);
+      Serial.println(randomNumber);
+      delay(200);                       // wait for a second
+      digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+      delay(200);                       // wait for a second
+    }else{
+      Serial.println("Dato incorrecto");
+    }
+  }
+}'''
